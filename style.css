@@ -192,8 +192,9 @@ nav ul li:hover {
 /* Song Banner (Optional) */
 .songBanner {
     flex: 1 1 35%;
-    background: url('bg.jpg') center center/cover no-repeat;
-    border-radius: 12px;
+    height: 600px;
+    background: url('bg\ image\ new.jpeg') center center/cover no-repeat;
+    border-radius: 10px;
 }
 
 /* Responsive */
