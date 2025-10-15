@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeatBox Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Poppins", sans-serif;
+    }
+    .login-container {
+      background-color: #1e1e1e;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      width: 320px;
+      text-align: center;
+    }
+    .login-container h1 {
+      color: #1db954;
+      margin-bottom: 25px;
+    }
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+    .login-btn {
+      background-color: #1db954;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .login-btn:hover {
+      background-color: #17a44a;
+    }
+    .guest-btn {
+      background: none;
+      border: 1px solid #1db954;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      color: #1db954;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .guest-btn:hover {
+      background-color: #1db954;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h1>BeatBox</h1>
+    <input type="text" id="username" placeholder="Enter your username">
+    <input type="password" id="password" placeholder="Enter your password">
+    <button class="login-btn" onclick="login()">Login</button>
+    <button class="guest-btn" onclick="continueAsGuest()">Continue as Guest</button>
+  </div>
+
+  
+
+<script>
+function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user && pass) {
+        localStorage.setItem("loggedIn", "true"); // ✅ save login status
+        localStorage.setItem("username", user);   // optional, save username
+        window.location.href = "index.html";      // ✅ redirect to main page
+    } else {
+        alert("Please enter username and password");
+    }
+}
+</script>
+
+</body>
+</html>

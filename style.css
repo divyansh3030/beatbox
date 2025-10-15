@@ -19,7 +19,7 @@ body {
 /* Navigation */
 nav {
     font-family: 'Ubuntu', sans-serif;
-    background-color: #1DB954; /* Spotify green */
+    background-color: rgb(128, 11, 83); /* Spotify green */
     padding: 12px 20px;
 }
 

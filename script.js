@@ -1,3 +1,17 @@
+function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user && pass) { // if both fields are filled
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("username", user); // optional, store username
+        window.location.href = "index.html"; // redirect to main page
+    } else {
+        alert("Please enter username and password");
+    }
+}
+
+
 console.log("Welcome to Spotify");
 
 // Initialize the Variables
