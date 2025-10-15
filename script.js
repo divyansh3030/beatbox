@@ -107,3 +107,20 @@ document.getElementById('previous').addEventListener('click', ()=>{
     masterPlay.classList.remove('fa-play-circle');
     masterPlay.classList.add('fa-pause-circle');
 })
+
+// ====== Search Feature ======
+let searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", () => {
+  let filter = searchInput.value.toLowerCase();
+  let songItems = document.getElementsByClassName("songItem");
+
+  Array.from(songItems).forEach(item => {
+    let songName = item.getElementsByClassName("songName")[0].innerText.toLowerCase();
+    if (songName.includes(filter)) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+  });
+});

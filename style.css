@@ -229,3 +229,34 @@ nav ul li:hover {
         width: 90%;
     }
 }
+/* ===== Search Bar ===== */
+.search-container {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  background-color: #121212;
+  border: 1px solid #1db954;
+  border-radius: 25px;
+  padding: 5px 10px;
+}
+
+.search-container input {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  padding: 5px;
+  width: 180px;
+}
+
+.search-container i {
+  color: #1db954;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.search-container input::placeholder {
+  color: #b3b3b3;
+}
