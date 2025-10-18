@@ -93,6 +93,13 @@ function login() {
         alert("Please enter username and password");
     }
 }
+
+function continueAsGuest() {
+    localStorage.setItem("loggedIn", "true");  // mark user as logged in
+    localStorage.setItem("username", "Guest"); // save username as Guest
+    window.location.href = "index.html";       // redirect to main page
+}
+
 </script>
 
 </body>

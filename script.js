@@ -138,3 +138,17 @@ searchInput.addEventListener("keyup", () => {
     }
   });
 });
+const logoutBtn = document.getElementById('logoutBtn');
+
+logoutBtn.addEventListener('click', () => {
+    // Remove login info from localStorage
+    localStorage.removeItem('loggedInUser');
+
+    // Redirect to login page (if you have one)
+    window.location.href = 'login.html';
+
+    // OR hide/show sections instead if using single page
+    // document.querySelector('.container').style.display = 'none';
+    // document.querySelector('#loginForm').style.display = 'block';
+});
+

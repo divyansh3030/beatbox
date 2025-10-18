@@ -261,3 +261,15 @@ nav ul li:hover {
 .search-container input::placeholder {
   color: #b3b3b3;
 }
+#logoutBtn {
+    padding: 8px 16px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#logoutBtn:hover {
+    background-color: #02b7ff80;
+}
