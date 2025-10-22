@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BeatBox Login</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       background-color: #121212;
@@ -35,17 +34,19 @@
       border-radius: 8px;
       outline: none;
     }
-    .login-btn {
-      background-color: #1db954;
-      border: none;
+    .login-btn, .guest-btn, .signup-btn {
       padding: 12px;
       width: 100%;
       border-radius: 8px;
-      color: #fff;
       font-weight: bold;
       cursor: pointer;
       margin-top: 10px;
       transition: 0.3s;
+    }
+    .login-btn {
+      background-color: #1db954;
+      border: none;
+      color: #fff;
     }
     .login-btn:hover {
       background-color: #17a44a;
@@ -53,16 +54,18 @@
     .guest-btn {
       background: none;
       border: 1px solid #1db954;
-      padding: 12px;
-      width: 100%;
-      border-radius: 8px;
       color: #1db954;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: 0.3s;
     }
     .guest-btn:hover {
+      background-color: #1db954;
+      color: #fff;
+    }
+    .signup-btn {
+      background: none;
+      border: 1px solid #1db954;
+      color: #1db954;
+    }
+    .signup-btn:hover {
       background-color: #1db954;
       color: #fff;
     }
@@ -76,31 +79,36 @@
     <input type="password" id="password" placeholder="Enter your password">
     <button class="login-btn" onclick="login()">Login</button>
     <button class="guest-btn" onclick="continueAsGuest()">Continue as Guest</button>
+    <button class="signup-btn" onclick="goToSignup()">Sign Up</button>
   </div>
 
-  
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
 
-<script>
-function login() {
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
+      const savedUser = localStorage.getItem("beatboxUser");
+      const savedPass = localStorage.getItem("beatboxPass");
 
-    if (user && pass) {
-        localStorage.setItem("loggedIn", "true"); // ✅ save login status
-        localStorage.setItem("username", user);   // optional, save username
-        window.location.href = "index.html";      // ✅ redirect to main page
-    } else {
-        alert("Please enter username and password");
+      if (user === savedUser && pass === savedPass) {
+          localStorage.setItem("loggedIn", "true");
+          localStorage.setItem("username", user);
+          window.location.href = "index.html";
+      } else {
+          alert("Invalid credentials! Please try again or sign up first.");
+      }
     }
-}
 
-function continueAsGuest() {
-    localStorage.setItem("loggedIn", "true");  // mark user as logged in
-    localStorage.setItem("username", "Guest"); // save username as Guest
-    window.location.href = "index.html";       // redirect to main page
-}
+    function continueAsGuest() {
+      localStorage.setItem("loggedIn", "guest");
+      localStorage.setItem("username", "Guest");
+      window.location.href = "index.html";
+    }
 
-</script>
+    function goToSignup() {
+      window.location.href = "signup.html";
+    }
+  </script>
 
 </body>
 </html>

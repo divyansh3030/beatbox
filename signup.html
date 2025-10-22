@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeatBox Signup</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Poppins", sans-serif;
+    }
+    .signup-container {
+      background-color: #1e1e1e;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      width: 320px;
+      text-align: center;
+    }
+    .signup-container h1 {
+      color: #1db954;
+      margin-bottom: 25px;
+    }
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+    .signup-btn, .back-btn {
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .signup-btn {
+      background-color: #1db954;
+      border: none;
+      color: #fff;
+    }
+    .signup-btn:hover {
+      background-color: #17a44a;
+    }
+    .back-btn {
+      background: none;
+      border: 1px solid #1db954;
+      color: #1db954;
+    }
+    .back-btn:hover {
+      background-color: #1db954;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <h1>Sign Up</h1>
+    <input type="text" id="newUsername" placeholder="Create username">
+    <input type="password" id="newPassword" placeholder="Create password">
+    <button class="signup-btn" onclick="signup()">Sign Up</button>
+    <button class="back-btn" onclick="goToLogin()">Back to Login</button>
+  </div>
+
+  <script>
+    function signup() {
+      const user = document.getElementById("newUsername").value;
+      const pass = document.getElementById("newPassword").value;
+
+      if (user && pass) {
+        localStorage.setItem("beatboxUser", user);
+        localStorage.setItem("beatboxPass", pass);
+        alert("Signup successful! You can now log in.");
+        window.location.href = "login.html";
+      } else {
+        alert("Please fill in all fields.");
+      }
+    }
+
+    function goToLogin() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
